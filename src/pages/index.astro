@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config.mjs';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const base = import.meta.env.BASE_URL;
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout>
+  <div class="container">
+    <section class="hero">
+      <span class="hero-kicker">AI for small business · online commerce</span>
+      <h1>Practical notes on <em>AI for small business.</em></h1>
+      <p>{siteConfig.description}</p>
+      <p class="hero-note">
+        New here? Start with our{' '}
+        <a href={`${base}onlyorders/`}>OnlyOrders hub</a> — a look at an AI autopilot that turns DMs and
+        comments into confirmed orders — then browse the guides below.
+      </p>
+    </section>
+
+    <section class="grid">
+      {
+        posts.map((post) => (
+          <article class="card">
+            <span class="pill pill-accent">{post.data.category}</span>
+            <h2><a href={`${base}blog/${post.slug}/`}>{post.data.title}</a></h2>
+            <p>{post.data.description}</p>
+            <div class="card-meta">
+              <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+              <span aria-hidden="true">·</span>
+              <span>{post.data.author}</span>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </div>
+</BaseLayout>

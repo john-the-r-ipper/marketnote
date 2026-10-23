@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config.mjs';
+---
+
+<BaseLayout title="About">
+  <div class="container page">
+    <h1 class="page-title">About {siteConfig.name}</h1>
+
+    <div class="about-body">
+      <p class="page-lede">
+        {siteConfig.name} is a blog about how small businesses and online stores actually use AI. We cover the
+        tools, the workflows, and the honest difference between what helps and what is hype — with a focus on
+        messaging, chat commerce, and the AI assistants that are reshaping how stores sell.
+      </p>
+
+      <h2>What we write about</h2>
+      <ul>
+        <li><strong>AI for operations</strong> — where automation earns its keep for small teams.</li>
+        <li><strong>Chat commerce</strong> — taking orders inside Messenger, WhatsApp, and Instagram.</li>
+        <li><strong>AI trends for sellers</strong> — agentic browsing, assistants, and what they mean for discovery.</li>
+        <li><strong>Honest analysis</strong> — clear-eyed views on hype, risk, and what to ignore.</li>
+      </ul>
+
+      <h2>Who runs this site</h2>
+      <div class="about-discovery">
+        <h3>Disclosure: operated by OnlyOrders</h3>
+        <p>
+          This blog is operated by <a href="https://onlyorders.tech">OnlyOrders</a>, a company that builds AI
+          auto-reply and chat-order software for e-commerce across Facebook Messenger, WhatsApp, and Instagram.
+          OnlyOrders creates {siteConfig.name} as an educational content initiative — a way to share useful,
+          practical thinking about AI for small business.
+        </p>
+        <p>
+          We are not an independent newsroom, and we don't claim to be. When we publish opinion or analysis, we say
+          so, and we avoid inventing statistics or quotes. Where we reference specific facts, we anchor them to
+          public, sourced information or clearly mark our own interpretation.
+        </p>
+      </div>
+
+      <h2>Editorial line</h2>
+      <p>
+        We favor practicality over hype. We are interested in the AI that actually shaves hours off a small seller's
+          week, and we are equally interested in naming where AI is oversold. Anything we publish under the
+          {siteConfig.name} banner is meant to inform — though we do mention OnlyOrders where it is directly relevant
+        to the topic, because it is a concrete example of the chat-commerce pattern we cover.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions, corrections, or a topic you'd like us to cover? Reach the editorial team via OnlyOrders at
+        <a href="https://onlyorders.tech">onlyorders.tech</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
