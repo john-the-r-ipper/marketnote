@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "astro",
+  "env": {
+    "SITE_URL": "https://marketnote.vercel.app",
+    "BASE_PATH": "/"
+  }
+}
