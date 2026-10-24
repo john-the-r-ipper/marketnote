@@ -32,3 +32,7 @@ Worker: opencode.
 - Repo: https://github.com/john-the-r-ipper/marketnote
 - Pages: https://john-the-r-ipper.github.io/marketnote/
 - Vercel: https://marketnote.vercel.app
+
+## SEO / internal linking (2026-10-24)
+- Added OnlyOrders crosslink box to article template (internal linking to /onlyorders/ hub).
+- Build clean; Pages workflow green; Vercel prod redeployed; check:live pass both hosts; IndexNow run.
